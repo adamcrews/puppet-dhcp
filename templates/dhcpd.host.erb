@@ -1,5 +1,9 @@
-host <%= @host %> {
+host <%= @title %> {
   hardware ethernet   <%= @mac %>;
   fixed-address       <%= @ip %>;
-  ddns-hostname       "<%= @name %>";
+  ddns-hostname       "<%= @title %>";
+  option host-name    "<%= @title %>";
+<% if @domain_name -%>
+  option domain-name  "<%= @domain_name %>";
+<% end -%>
 }
